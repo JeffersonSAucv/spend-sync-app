@@ -1,0 +1,17 @@
+.divider {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60%;
+    background-color: rgba(128, 128, 128, 0.242);
+    height: 1px;
+    width: calc(50% - 30px);
+  }
+  &::after {
+    right: 0;
+  }
+}

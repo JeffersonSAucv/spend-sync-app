@@ -1,0 +1,70 @@
+<main class="auth-container">
+  <section></section>
+  <section>
+    <h1 class="text-center text-primary fs-5 fw-bold my-2">Spend Sync</h1>
+    <div class="card py-2 border-0 shadow-sm">
+      <div class="card-body">
+        <h2 class="text-primary fs-5 fw-medium">Create your account.</h2>
+        <p class="text-secondary fs-7 fw-medium">
+          Let's get started. Already have an account?
+          <a routerLink="/login" class="fw-medium">Login here</a>
+        </p>
+        <button
+          type="button"
+          class="btn btn-outline-secondary w-100 text-black border-secondary-subtle fw-medium py-2 rounded-3"
+        >
+          <i class="bi bi-google me-2"></i>
+          Sign up with Google
+        </button>
+        <p class="mt-2 text-secondary text-center divider">or</p>
+        <form>
+          <label class="form-label fw-medium" for="fullname">Full Name</label>
+          <input
+            id="fullname"
+            type="text"
+            class="form-control mb-3 bg-body-tertiary"
+            placeholder="e.g John Doe"
+          />
+          <label class="form-label fw-medium" for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="form-control mb-3 bg-body-tertiary"
+            placeholder="e.g user@example.com"
+          />
+          <label class="form-label fw-medium" for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="form-control mb-3 bg-body-tertiary"
+            placeholder="*********"
+          />
+          <label class="form-label fw-medium" for="confirm">
+            Confirm Password
+          </label>
+          <input
+            id="confirm"
+            type="password"
+            class="form-control mb-2 bg-body-tertiary"
+            placeholder="*********"
+          />
+          <input
+            class="form-check-input me-2"
+            type="checkbox"
+            aria-labelledby="terms"
+          />
+          <small class="d-inline fs-8" id="terms">
+            I agree to the <a href="#">Terms of Service</a> and
+            <a href="#">Privacy Policy</a>
+          </small>
+          <button
+            type="submit"
+            class="btn btn-primary w-100 py-2 fw-medium mt-3 rounded-3"
+          >
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>

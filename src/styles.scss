@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.fs-7 {
+  font-size: 0.875rem;
+}
+.fs-8 {
+  font-size: 0.75rem;
+}

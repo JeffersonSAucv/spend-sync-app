@@ -11,5 +11,12 @@ export const routes: Routes = [
         (c) => c.RegisterPageComponent
       ),
   },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./dashboard/pages/main-page/main-page.component').then(
+        (c) => c.MainPageComponent
+      ),
+  },
   { path: '**', redirectTo: 'login' },
 ];

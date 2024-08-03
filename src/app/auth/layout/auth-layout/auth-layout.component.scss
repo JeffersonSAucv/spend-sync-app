@@ -1,0 +1,32 @@
+.auth-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  .bg-left-container {
+    background-image: url("/images/bg-auth.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    display: none;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 40% calc(60% - 60px);
+    column-gap: 60px;
+    padding-left: 0;
+
+    .bg-left-container {
+      display: block;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

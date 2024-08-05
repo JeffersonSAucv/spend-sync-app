@@ -71,10 +71,9 @@
   </div>
 
   @if (isSuccessResponse) {
-  <div class="alert alert-success fw-medium mt-3 mb-0" role="alert">
-    <i class="bi bi-check-circle-fill me-2"></i>
-    Your account has been created successfully. Redirecting to Dashboard...
-  </div>
+    <app-auth-alert />
+  } @else if (error) {
+    <app-auth-alert [error]="error" />
   }
 
   <button

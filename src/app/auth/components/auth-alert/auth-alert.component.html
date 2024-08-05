@@ -1,0 +1,17 @@
+<div
+  class="alert alert-success fw-medium mt-3 mb-0"
+  [ngClass]="{ 'alert-success': !error, 'alert-danger': error }"
+  role="alert"
+>
+  @for (msg of messages; track $index) {
+    <p class="mb-0">
+      @if (!error) {
+        <i class="bi bi-check-circle-fill me-2"></i>
+      } @else {
+        <i class="bi bi-x-circle-fill me-2"></i>
+      }
+      {{ msg }}
+    </p>
+  }
+</div>
+

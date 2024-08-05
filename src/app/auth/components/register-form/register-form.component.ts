@@ -11,11 +11,12 @@ import {
 import { AuthService } from '../../services/auth.service';
 import { FormsValidatorService } from '../../../shared/services/forms-validator.service';
 import { EMAIL_REGEX } from '../../../shared/utils/constants/common.constants';
+import { AuthAlertComponent } from '../auth-alert/auth-alert.component';
 
 @Component({
   selector: 'app-register-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, AuthAlertComponent],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.scss',
 })
@@ -45,6 +46,7 @@ export class RegisterFormComponent implements OnDestroy {
 
   public isLoading: boolean = false;
   public isSuccessResponse: boolean = false;
+  public error: string[] | undefined = undefined;
 
   public handleSubmit(): void {
     if (this.registerForm.invalid) {
@@ -62,6 +64,7 @@ export class RegisterFormComponent implements OnDestroy {
       })
       .subscribe({
         next: (res) => {
+          this.isLoading = false;
           this.isSuccessResponse = true;
           localStorage.setItem('user', JSON.stringify(res));
           this.redirectTimeout = window.setTimeout(() => {
@@ -69,10 +72,9 @@ export class RegisterFormComponent implements OnDestroy {
           }, 3000);
         },
         error: (err) => {
-          console.error(err);
-        },
-        complete: () => {
           this.isLoading = false;
+          this.error = err.error.message;
+          console.log(err);
         },
       });
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UserLocalStorage } from '../../../auth/utils/interfaces/register-req-res/register-rq-rs.interface';
 import { CommonModule } from '@angular/common';
+import { UserLocalStorage } from '../../../auth/utils/interfaces/auth/auth.interface';
 
 @Component({
   selector: 'app-main-page',

@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth.service';
 import { FormsValidatorService } from '../../../shared/services/forms-validator.service';
 import { EMAIL_REGEX } from '../../../shared/utils/constants/common.constants';
 import { AuthAlertComponent } from '../auth-alert/auth-alert.component';
+import { hasErrorValidator } from '../../helpers/has-error.helper';
 
 @Component({
   selector: 'app-register-form',
@@ -46,7 +47,7 @@ export class RegisterFormComponent implements OnDestroy {
 
   public isLoading: boolean = false;
   public isSuccessResponse: boolean = false;
-  public error: string[] | undefined = undefined;
+  public error?: string[];
 
   public handleSubmit(): void {
     if (this.registerForm.invalid) {
@@ -74,16 +75,13 @@ export class RegisterFormComponent implements OnDestroy {
         error: (err) => {
           this.isLoading = false;
           this.error = err.error.message;
-          console.log(err);
+          console.error(err);
         },
       });
   }
 
   public hasError(controlName: string): boolean {
-    return (
-      this.registerForm.controls[controlName].touched &&
-      this.registerForm.controls[controlName].invalid
-    );
+    return hasErrorValidator(this.registerForm, controlName);
   }
 
   ngOnDestroy(): void {

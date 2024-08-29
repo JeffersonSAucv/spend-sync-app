@@ -13,25 +13,25 @@ export class MenuMobileComponent {
   public menuItems = signal<MenuItem[]>([
     {
       label: 'Dashboard',
-      icon: 'bi bi-grid-fill fs-icon-small',
+      icon: 'bi bi-grid-fill fs-icon-normal',
       path: '/dashboard',
       isExact: true,
     },
     {
       label: 'Bills',
-      icon: 'bi bi-currency-dollar fs-icon-normal',
+      icon: 'bi bi-currency-dollar fs-icon-normal fs-icon-small',
       path: '/dashboard/bills',
       isExact: false,
     },
     {
       label: 'Goals',
-      icon: 'bi bi-person-fill fs-icon-normal',
+      icon: 'bi bi-trophy-fill fs-icon-normal',
       path: '/dashboard/goals',
       isExact: false,
     },
     {
       label: 'Profile',
-      icon: 'bi bi-trophy-fill fs-icon-small',
+      icon: 'bi bi-person-fill fs-icon-normal fs-icon-small',
       path: '/dashboard/profile',
       isExact: false,
     },

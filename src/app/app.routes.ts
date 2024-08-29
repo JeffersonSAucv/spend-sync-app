@@ -4,6 +4,8 @@ import { RegisterPageComponent } from './auth/pages/register-page/register-page.
 import { AuthLayoutComponent } from './auth/layout/auth-layout/auth-layout.component';
 import { isAuthenticatedGuard } from './auth/guards/is-authenticated.guard';
 import { isNotAuthenticatedGuard } from './auth/guards/is-not-authenticated.guard';
+import { MainPageComponent } from './dashboard/pages/main-page/main-page.component';
+import { BillsPageComponent } from './dashboard/pages/bills-page/bills-page.component';
 
 export const routes: Routes = [
   {
@@ -26,9 +28,19 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadComponent: () =>
-      import('./dashboard/pages/main-page/main-page.component').then(
-        (c) => c.MainPageComponent
-      ),
+      import(
+        './dashboard/layout/dashboard-layout/dashboard-layout.component'
+      ).then((c) => c.DashboardLayoutComponent),
+    children: [
+      {
+        path: '',
+        component: MainPageComponent,
+      },
+      {
+        path: 'bills',
+        component: BillsPageComponent,
+      },
+    ],
     canActivate: [isAuthenticatedGuard],
   },
   { path: '**', redirectTo: 'login' },

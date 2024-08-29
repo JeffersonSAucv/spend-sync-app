@@ -1,0 +1,13 @@
+<nav class="menu-mobile">
+  @for (item of menuItems(); track $index) {
+    <a
+      [routerLink]="item.path"
+      [routerLinkActive]="'text-primary'"
+      [routerLinkActiveOptions]="{ exact: item.isExact }"
+      class="d-flex flex-column align-items-center"
+    >
+      <i [class]="item.icon"></i>
+      {{ item.label }}
+    </a>
+  }
+</nav>

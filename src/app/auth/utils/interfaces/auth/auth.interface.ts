@@ -5,16 +5,16 @@ export interface AuthResponse {
   user: UserData;
 }
 export interface UserData {
-  firstname: null;
-  lastname: null;
+  firstName: null;
+  lastName: null;
   nickname: string;
   email: string;
 }
 export interface UserLocalStorage {
   nickname: string;
   email: string;
-  firstname: null;
-  lastname: null;
+  firstName: null;
+  lastName: null;
   token: string;
 }
 

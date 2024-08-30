@@ -33,10 +33,21 @@ body {
   }
 }
 
+.main-container {
+  width: calc(100% - 32px);
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 1024px) {
   .card-container {
     width: 100%;
     max-width: 645px;
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fw-md-medium {
+    font-weight: 500;
   }
 }

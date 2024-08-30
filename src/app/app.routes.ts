@@ -6,6 +6,8 @@ import { isAuthenticatedGuard } from './auth/guards/is-authenticated.guard';
 import { isNotAuthenticatedGuard } from './auth/guards/is-not-authenticated.guard';
 import { MainPageComponent } from './dashboard/pages/main-page/main-page.component';
 import { BillsPageComponent } from './dashboard/pages/bills-page/bills-page.component';
+import { GoalsPageComponent } from './dashboard/pages/goals-page/goals-page.component';
+import { ProfilePageComponent } from './dashboard/pages/profile-page/profile-page.component';
 
 export const routes: Routes = [
   {
@@ -39,6 +41,14 @@ export const routes: Routes = [
       {
         path: 'bills',
         component: BillsPageComponent,
+      },
+      {
+        path: 'goals',
+        component: GoalsPageComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfilePageComponent,
       },
     ],
     canActivate: [isAuthenticatedGuard],

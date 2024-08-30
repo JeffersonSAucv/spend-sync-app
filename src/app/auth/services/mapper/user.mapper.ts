@@ -8,7 +8,7 @@ export function userMapper(response: AuthResponse): UserLocalStorage {
     token: response.token,
     nickname: response.user.nickname,
     email: response.user.email,
-    firstname: response.user.firstname ?? null,
-    lastname: response.user.lastname ?? null,
+    firstName: response.user.firstName ?? null,
+    lastName: response.user.lastName ?? null,
   };
 }

@@ -1,8 +1,10 @@
-<app-menu-desktop />
+<div class="dashboard-layout">
+  <app-menu-desktop class="py-4 px-3" />
 
-<app-header-dashboard />
-<section class="page-container">
-  <router-outlet />
-</section>
+  <section class="page-container">
+    <app-header-dashboard />
+    <router-outlet />
+  </section>
+</div>
 
 <app-menu-mobile />

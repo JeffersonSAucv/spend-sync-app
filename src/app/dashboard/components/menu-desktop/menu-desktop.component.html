@@ -1,1 +1,46 @@
-<p>menu-desktop works!</p>
+<h1 class="h4 fw-bold text-primary mb-5">SpendSync</h1>
+
+<nav class="d-flex flex-column gap-4">
+  @for (item of pageLinks(); track $index) {
+    <a
+      [routerLink]="[item.path]"
+      [routerLinkActive]="'active-link'"
+      [routerLinkActiveOptions]="{ exact: item.isExact }"
+      class="d-flex align-items-center fw-medium text-decoration-none text-secondary"
+    >
+      <i [class]="item.icon + ' me-3'"></i>
+      {{ item.label }}
+    </a>
+  }
+
+  <hr />
+
+  <a
+    [href]="[settingsLinks()[0].path]"
+    target="_blank"
+    class="d-flex align-items-center fw-medium text-decoration-none text-secondary"
+  >
+    <i [class]="settingsLinks()[0].icon + ' me-3'"></i>
+    {{ settingsLinks()[0].label }}
+  </a>
+
+  <a
+    [routerLink]="[settingsLinks()[1].path]"
+    [routerLinkActive]="'active-link'"
+    [routerLinkActiveOptions]="{ exact: settingsLinks()[1].isExact }"
+    class="d-flex align-items-center fw-medium text-decoration-none text-secondary"
+  >
+    <i [class]="settingsLinks()[1].icon + ' me-3'"></i>
+    {{ settingsLinks()[1].label }}
+  </a>
+
+  <a
+    [routerLink]="[settingsLinks()[2].path]"
+    (click)="logout()"
+    class="d-flex align-items-center fw-medium text-decoration-none text-secondary"
+    [ngClass]="settingsLinks()[2].className"
+  >
+    <i [class]="settingsLinks()[2].icon + ' me-3'"></i>
+    {{ settingsLinks()[2].label }}
+  </a>
+</nav>

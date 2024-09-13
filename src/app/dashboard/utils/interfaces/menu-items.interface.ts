@@ -6,4 +6,5 @@ export interface MenuItem {
   icon: string;
   path: string;
   isExact: boolean;
+  className?: string;
 }

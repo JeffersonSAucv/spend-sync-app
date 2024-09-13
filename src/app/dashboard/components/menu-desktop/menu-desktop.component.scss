@@ -1,0 +1,13 @@
+nav {
+  a {
+    box-sizing: border-box;
+    padding: 0 0.725rem;
+
+    &.active-link {
+      background-color: #f4f9fc;
+      outline: 1px solid #d4e4fd;
+      border-radius: 8px;
+      color: var(--bs-primary) !important;
+    }
+  }
+}
